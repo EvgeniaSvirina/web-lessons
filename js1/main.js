@@ -2,7 +2,7 @@ let images = document.querySelectorAll('.carousel-item');
 let i;
 
 for (i = 1; i < 5; i++) {
-    images[i].style.display = "none";
+    images[i].style.display = "none"; 
 }
 
 i = 0;
