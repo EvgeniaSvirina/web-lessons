@@ -1,38 +1,38 @@
-let images = document.querySelectorAll('.carousel-item');
-let i;
 
-for (i = 1; i < 5; i++) {
-    images[i].style.display = "none"; 
+let index=0;
+
+
+
+function prev(){
+showSlide(--index);
 }
 
-i = 0;
+function next(){
+showSlide(++index);
+}
+const next_btn = document.getElementsByClassName('custom-carousel-control-next')[0];
+const prev_btn = document.getElementsByClassName('custom-carousel-control-prev')[0];
 
-let btnLeft = document.getElementById("left");
-let btnRight = document.getElementById("right");
+next_btn.addEventListener('click', next);
+prev_btn.addEventListener('click', prev);
 
-function imgShow (i) {
-    images.forEach((img) => {
-        img.style.display = "none";
-    })
-    images[i].style.display = "block";
+function showSlide(i) {
+let slides = document.getElementsByClassName('custom-carousel-item');
+let length = slides.length -1;
+if (i<1) {
+	index = length;
 }
 
-btnLeft.addEventListener("click", () => {
-    if (i == 0) {
-        i = 4;
-        imgShow(i)
-    } else {
-        i--;
-        imgShow(i)
-    }
-})
+if (i>length) {
+	index = 0;
+}
 
-btnRight.addEventListener("click", () => {
-    if (i == 4) {
-        i = 0;
-        imgShow(i)
-    } else {
-        i++;
-        imgShow(i)
-    }
-})
+
+for (let element of slides) {
+element.classList.remove('active');
+}
+console.log(i, slides.classList);
+slides[index].classList.add('active');
+}
+
+
