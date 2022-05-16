@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=>, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+    <form>
+        <p><input type="button" value=" Нажми меня нежно "></p>
+       </form>
+<script>
+       var list = document.getElementsByTagName('button');
+       function add_to_group(){
+           var index;
+           for(var i=0;i<list.length;i++){
+               if(list[i] = target) index = i;
+           }
+           console.log(target + index + 'clicked');
+       }
+       <button onclick='add_to_group'>Один</button>
+       <button onclick='add_to_group'>Два</button>
+
+       </script>
+
+<script>
+function getRandomInt(max) {
+return Math.floor(Math.random() * max);
+}
+
+let memberes = ['Patrica C. Edmondson', 'Abbie A. Harvey', 'Denise V. Taylor', 'Curtis E. McGraw', 'Bradley D. Martin', 'Mark M. Brown', 'Tony M. Newton', 'Ann B. Harmon', 'Darius S. Brown', 'Gary C. Wittmer', 'Judy M. Herring', 'George K. Shields', 'Patricia D. Grace', 'Larry S. Dillon', 'Roberto M. Miller', 'Anthony R. McVey'];
+
+let group1 = [];
+let group2 = [];
+
+function add_to_group () {
+let indx = getRandomInt(memberes.length -1);
+group1.push( memberes[indx]);
+memberes.splice(indx, 1);
+console.log( memberes);
+}
+
+add_to_group ();
+add_to_group ();
+add_to_group ();
+
+
+console.log( group1, group2);
+alert("Hello Word");
+</script>
+</body>
+</html>
